@@ -1,11 +1,11 @@
 from enum import Enum
 """
-File:         Card.py
-Author:       Your Name
+File:         PlayingCard.py
+Author:       Enrique Perez
 Date:         Date of creation/modification
 Description:  A brief explanation of what this script does.
 """
-class Card(object):
+class PlayingCard(object):
 
   class Suit(Enum):
     CLUB = "Club"

@@ -1,4 +1,4 @@
-from Card import Card
+from PlayingCard import Card
 import unittest
 
 class TestInit(unittest.TestCase):
