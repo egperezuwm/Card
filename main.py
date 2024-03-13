@@ -1,10 +1,15 @@
 from card import Suit, Rank, Card, Deck
 
+"""
+File:         main.py (distribute)
+Author:       Enrique Perez
+Date:         03/12/2024
+Description:  Distributes cards from full deck to indicated number of players.
+"""
 deck = Deck() # empty deck (no cards)
-card = Card(Suit.CLUB, Rank.DEUCE)
 for suit in Suit:
     for rank in Rank:
-        deck.add(Card(suit, rank))
+        deck.add(Card(suit, rank))  # card = Card(Suit.CLUB, Rank.DEUCE)
 deck.shuffle()
 
 numPlayers = int(input("Enter Players: "))
