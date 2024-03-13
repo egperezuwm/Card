@@ -1,10 +1,12 @@
 import random
 from enum import Enum
 """
-File:         Card.py
+File:         card.py
 Author:       Enrique Perez
 Date:         03/11/2024
 Description:  Contains a "Card" and controlling "Deck" class.
+              A card should be treated as a unique object to a Deck, 
+              no two cards should be equal to each other.
 """
 
 
@@ -16,6 +18,7 @@ class Suit(Enum):
 
   def show(self):
     return self.value
+
 class Rank(Enum):
   ACE = 1
   DEUCE = 2
@@ -45,13 +48,21 @@ class Rank(Enum):
         return self.value
 
 class Card(object):
-  def __init__(self, rank, suit):
-    # precondition:   None
+  def __init__(self, suit=None, rank=None):
+    # precondition:   suit and rank must be valid (Enum)
     # postcondition:  Card is assigned Suit and Rank (by the Deck)
-    self.rank = rank
-    self.suit = suit
+    #if suit is None: raise ValueError("suit cannot be None")
+    #if suit is not isinstance(suit, Suit.name): raise ValueError("suit is invalid")
+    #if rank is None: raise ValueError("rank cannot be None")
+    #if rank is not isinstance(rank, Rank.name): raise ValueError("rank is invalid")
+    if not isinstance(suit, Suit): raise TypeError
+    if not isinstance(rank, Rank): raise TypeError
+    self.suit = suit;
+    self.rank = rank;
+
 
   def __eq__(self, card=None):
+    #used to detect duplicates in tests
     if card is None:
       return False
     elif self.suit == card.suit and self.rank == card.rank:
