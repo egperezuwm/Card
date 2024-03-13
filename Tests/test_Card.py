@@ -4,10 +4,10 @@ from unittest import TestCase
 from card import Suit, Rank, Card, Deck
 
 """
-File:         Test_Card.py
+File:         test_Card.py
 Author:       Enrique Perez
 Date:         03/12/2024
-Description:  Tests the "Card" and controlling "Deck" class.
+Description:  Tests the "Card" class.
 """
 class TestCard(TestCase):
     def setUp(self):
